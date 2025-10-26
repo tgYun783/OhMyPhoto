@@ -1,1 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Docker (나중을 위해)
+.dockerignore
+docker-compose.yml.override
+
+# .env 파일 (매우 중요!)
 .env
