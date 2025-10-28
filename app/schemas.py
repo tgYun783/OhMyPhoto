@@ -14,4 +14,11 @@ class User(BaseModel):
     email: EmailStr
 
     class Config:
-        orm_mode = True  # SQLAlchemy 모델을 Pydantic 모델로 변환 허용
+        from_attributes = True  # SQLAlchemy 모델을 Pydantic 모델로 변환 허용
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    email: str | None = None
