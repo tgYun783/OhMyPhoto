@@ -1,0 +1,32 @@
+{
+  "name": "My Photo Cloud Backend",
+
+  // 1. docker-compose.yml 파일을 사용하라고 알려줍니다.
+  "dockerComposeFile": ["../docker-compose.yml"],
+
+  // 2. 여러 서비스(db, backend) 중에서 'backend' 서비스에 접속하라고 지정합니다.
+  "service": "backend",
+
+  // 3. 컨테이너에 접속한 후 VS Code 작업 영역을 '/code'로 엽니다.
+  "workspaceFolder": "/code",
+
+  // 4. (선택) 컨테이너 안에 VS Code 확장을 자동으로 설치합니다.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python", // 파이썬 확장
+        "ms-python.pylance", // 코드 분석 (노란줄 없애기)
+        "ms-azuretools.vscode-docker" // 도커 확장
+      ]
+    }
+  },
+
+  // 5. (선택) 컨테이너가 켜진 후 실행할 명령어 (패키지 설치 등)
+  // "postCreateCommand": "pip install -r app/requirements.txt",
+  // (이미 Dockerfile에서 설치하므로 주석 처리해도 됩니다)
+
+  // 6. VS Code가 호스트(내 PC)가 아닌 컨테이너의 파이썬을 사용하도록 설정
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python"
+  }
+}
